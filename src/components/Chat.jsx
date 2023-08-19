@@ -2,6 +2,7 @@ import Cam from '../images/video-camera.png';
 import Add from '../images/user-plus.png';
 import More from '../images/dots-three-outline.png';
 import Messages from './Messages';
+import Input from './Input';
 
 function Chat() {
   return (
@@ -15,6 +16,7 @@ function Chat() {
         </div>
       </div>
       <Messages />
+      <Input />
     </div>
   );
 }
