@@ -100,10 +100,16 @@ body {
     height: 80%;
     display: flex;
     overflow: hidden;
+    @include tablets {
+      width: 90%;
+    }
 
     .sidebar {
       flex: 1;
       background-color: var(--indigo-4);
+      @include tablets {
+        position: relative;
+      }
       .navbar {
         display: flex;
         align-items: center;
@@ -114,6 +120,9 @@ body {
 
         .logo {
           font-weight: var(--font-weight-9);
+          @include tablets {
+            display: none;
+          }
         }
         .user {
           display: flex;
@@ -135,6 +144,10 @@ body {
             cursor: pointer;
             padding: 4px;
             border-radius: 8px;
+            @include tablets {
+              position: absolute;
+              bottom: 10px;
+            }
           }
         }
       }
