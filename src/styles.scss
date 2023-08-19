@@ -1,10 +1,14 @@
+@import 'open-props/style';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  color: var(--stone-1);
+}
 .form-container {
-  background-color: rgb(56, 56, 195);
+  background-color: var(--gradient-23);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -14,16 +18,16 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-color: white;
+    background-color: var(--stone-1);
     padding: 20px 60px;
-    border-radius: 12px;
+    border-radius: var(--radius-3);
     .logo {
-      color: #5d5d5d;
+      color: var(--stone-8);
       font-weight: 700;
       font-size: 24px;
     }
     .title {
-      color: #5d5d5d;
+      color: var(--stone-8);
       font-weight: 300;
     }
 
@@ -35,7 +39,7 @@
       input {
         padding: 20px;
         border: none;
-        border-bottom: 1px solid #5d5d5d;
+        border-bottom: 1px solid var(--stone-8);
         &::placeholder {
           color: rgb(175, 175, 175);
         }
@@ -44,7 +48,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        color: rgb(127, 128, 223);
+        color: var(--purple-10);
         font-size: 12px;
         cursor: pointer;
         img {
@@ -52,15 +56,41 @@
         }
       }
       button {
-        background-color: teal;
-        color: white;
+        background-color: var(--teal-4);
+        color: var(--stone-1);
         border: none;
         padding: 10px;
         cursor: pointer;
       }
     }
     small {
-      color: rgb(127, 128, 223);
+      color: var(--purple-10);
+    }
+  }
+}
+
+// HOME PAGE
+.home {
+  background: var(--gradient-23);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    border: 1px solid var(--stone-1);
+    border-radius: var(--radius-2);
+    width: 65%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+      flex: 1;
+      background-color: var(--indigo-4);
+    }
+    .chat {
+      flex: 2;
     }
   }
 }
