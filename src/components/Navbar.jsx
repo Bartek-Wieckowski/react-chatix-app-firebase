@@ -1,16 +1,16 @@
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
+import { useAuth } from '../context/AuthContext';
 
 function Navbar() {
+  const { currentUser } = useAuth();
+
   return (
     <div className="navbar">
       <span className="logo">CHATix</span>
       <div className="user">
-        <img
-          src="https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
-        <span>John</span>
+        <img src={currentUser.photoURL} alt="" />
+        <span>{currentUser.displayName}</span>
         <button onClick={() => signOut(auth)}>logout</button>
       </div>
     </div>
