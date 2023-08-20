@@ -4,7 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { doc, setDoc } from 'firebase/firestore';
 import AddImg from '../images/file-plus.png';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Register() {
   const [err, setErr] = useState(false);
@@ -65,9 +65,11 @@ function Register() {
             <span>Add an avatar</span>
           </label>
           <button>Sign up</button>
-          {err && <span>Something went wrong!</span>}
+          {err && <span className="errMsg">Something went wrong!</span>}
         </form>
-        <small>You do have an account? Login</small>
+        <small>
+          You do have an account? <Link to="/login">Login</Link>
+        </small>
       </div>
     </div>
   );
