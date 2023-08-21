@@ -64,7 +64,7 @@ body {
         display: flex;
         align-items: center;
         gap: 10px;
-        color: var(--purple-10);
+        color: var(--yellow-10);
         font-size: 12px;
         cursor: pointer;
         img {
@@ -80,7 +80,7 @@ body {
       }
     }
     small {
-      color: var(--purple-10);
+      color: var(--yellow-10);
     }
   }
 }
@@ -94,7 +94,7 @@ body {
   justify-content: center;
 
   .container {
-    border: 1px solid var(--stone-1);
+    box-shadow: var(--shadow-5);
     border-radius: var(--radius-2);
     width: 65%;
     height: 80%;
@@ -106,7 +106,7 @@ body {
 
     .sidebar {
       flex: 1;
-      background-color: var(--indigo-4);
+      background-color: var(--yellow-6);
       @include tablets {
         position: relative;
       }
@@ -114,7 +114,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: var(--purple-8);
+        background: var(--yellow-8);
         height: 50px;
         padding: 10px;
 
@@ -175,8 +175,9 @@ body {
         gap: 10px;
         padding: 10px;
         cursor: pointer;
+        transition: background 0.3s ease;
         &:hover {
-          background: var(--indigo-8);
+          background: var(--violet-8);
         }
         img {
           width: 50px;
@@ -203,7 +204,7 @@ body {
         justify-content: space-between;
         align-items: center;
         height: 50px;
-        background: var(--purple-6);
+        background: var(--yellow-6);
         color: var(--stone-1);
         padding: 10px;
 
@@ -218,7 +219,7 @@ body {
         }
       }
       .messages {
-        background-color: var(--indigo-2);
+        background-color: var(--orange-3);
         height: calc(100% - 100px);
         padding: 10px;
         overflow-y: auto;
@@ -260,7 +261,7 @@ body {
             .message-content {
               align-items: flex-end;
               p {
-                background-color: var(--indigo-8);
+                background-color: var(--violet-8);
                 color: var(--stone-1);
                 padding: 10px 20px;
                 border-radius: 10px 0px 10px 10px;
@@ -283,6 +284,7 @@ body {
           border: none;
           outline: none;
           color: var(--gray-10);
+          background-color: var(--stone-1);
           font-size: 18px;
           &::placeholder {
             color: var(--gray-8);
@@ -303,6 +305,10 @@ body {
             background: var(--teal-4);
             cursor: pointer;
             border-radius: 8px;
+            transition: background 0.3s ease;
+            &:hover {
+              background: var(--teal-8);
+            }
           }
         }
       }
@@ -311,4 +317,21 @@ body {
 }
 .errMsg {
   color: var(--red-9);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue-11);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2980b9;
+}
+
+/* Kolor tła paska przewijania */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }
