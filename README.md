@@ -1,6 +1,6 @@
 ![Design preview](./readme-screen-project.jpg)
 
-# Getting Started Simple Slider with Vite
+# Simple Chat App with Vite -> CHATix
 
 This project was bootstrapped with [Vite].
 
