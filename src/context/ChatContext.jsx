@@ -12,7 +12,7 @@ const ChatContext = createContext();
 function ChatProvider({ children }) {
   const { currentUser } = useAuth();
   const initialState = {
-    chatID: null,
+    chatID: 'null',
     user: {},
   };
 
