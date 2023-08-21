@@ -10,7 +10,7 @@ This project was bootstrapped with [Vite].
 - react-router-dom
 - Database -> Firebase
 - User Authenticate Firebase
-- Many function in Firestore Database
+- Many function from Firestore Database
 - SASS
 - Open Props
 - dotenv
