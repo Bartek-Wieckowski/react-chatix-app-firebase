@@ -23,9 +23,9 @@ function ChatProvider({ children }) {
           ...state,
           user: action.payload,
           chatID:
-            currentUser.uid > action.paylod
-              ? currentUser.uid + action.paylod
-              : action.paylod + currentUser.uid,
+            currentUser.uid > action.payload.uid
+              ? currentUser.uid + action.payload.uid
+              : action.payload.uid + currentUser.uid,
         };
 
       default:
