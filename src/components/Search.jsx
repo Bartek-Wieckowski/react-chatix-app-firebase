@@ -99,7 +99,7 @@ function Search() {
 
       {err && <span className="errMsg">User not found!</span>}
       {findUser && (
-        <div className="user-chat" onClick={handleSelect}>
+        <div className="user-chat" onClick={() => handleSelect()}>
           <img src={findUser.photoURL} alt="" />
           <div className="user-chat-info">
             <span>{findUser.displayName}</span>
