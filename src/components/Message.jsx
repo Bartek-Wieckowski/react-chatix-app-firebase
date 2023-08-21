@@ -1,9 +1,16 @@
+import { useEffect, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useChat } from '../context/ChatContext';
 
 function Message({ message }) {
   const { currentUser } = useAuth();
   const { data } = useChat();
+
+  const ref = useRef();
+
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [message]);
 
   function calculateMessageDateTime() {
     if (message.date) {
@@ -26,6 +33,7 @@ function Message({ message }) {
 
   return (
     <div
+      ref={ref}
       className={`message ${message.senderID === currentUser.uid && 'owner'}`}
     >
       <div className="message-info">
