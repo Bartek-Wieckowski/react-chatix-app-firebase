@@ -4,11 +4,14 @@ import More from '../images/dots-three-outline.png';
 import Messages from './Messages';
 import Input from './Input';
 
+import { useChat } from '../context/ChatContext';
+
 function Chat() {
+  const { data } = useChat();
   return (
     <div className="chat">
       <div className="chat-info">
-        <span>Jane</span>
+        <span>{data.user?.displayName}</span>
         <div className="chat-icons">
           <img src={Cam} alt="" />
           <img src={Add} alt="" />
