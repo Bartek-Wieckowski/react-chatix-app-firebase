@@ -1,19 +1,46 @@
-function Message() {
+import { useAuth } from '../context/AuthContext';
+import { useChat } from '../context/ChatContext';
+
+function Message({ message }) {
+  const { currentUser } = useAuth();
+  const { data } = useChat();
+
+  function calculateMessageDateTime() {
+    if (message.date) {
+      const timestamp = message.date;
+      const messageDate = timestamp.toDate();
+      const currentDate = new Date();
+
+      if (
+        messageDate.getDate() === currentDate.getDate() &&
+        messageDate.getMonth() === currentDate.getMonth() &&
+        messageDate.getFullYear() === currentDate.getFullYear()
+      ) {
+        return messageDate.toLocaleTimeString();
+      } else {
+        return messageDate.toLocaleString();
+      }
+    }
+    return;
+  }
+
   return (
-    <div className="message owner">
+    <div
+      className={`message ${message.senderID === currentUser.uid && 'owner'}`}
+    >
       <div className="message-info">
         <img
-          src="https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
+          src={
+            message.senderID === currentUser.uid
+              ? currentUser.photoURL
+              : data.user.photoURL
+          }
         />
-        <span>Just now</span>
+        <small>{calculateMessageDateTime()}</small>
       </div>
       <div className="message-content">
-        <p>Hello</p>
-        {/* <img
-          src="https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        /> */}
+        <p>{message.text}</p>
+        {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
   );
